@@ -10,8 +10,9 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,500;1,400&family=Oswald:wght@200;300;400;500;600;700&family=Ubuntu+Mono&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/icon/icon.ico"/>
       </Head>
-      <body className="bg-[#EBE7E0]">
+      <body className="bg-white-bg ">
         <Main />
         <NextScript />
       </body>

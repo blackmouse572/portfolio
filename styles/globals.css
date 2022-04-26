@@ -4,6 +4,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -18,14 +19,123 @@ a {
 * {
   box-sizing: border-box;
 }
-@layer components{
-  .hightlight{
+@layer components {
+  .text-overlay {
+    @apply font-mono absolute bottom-0 right-10 text-white transition-all duration-1000;
+  }
+  .hightlight {
     font-weight: bolder;
-    background: linear-gradient(104deg,rgba(255,130,130,0) .9%,#ff8282 2.4%,rgba(255,130,130,.5) 5.8%,rgba(255,130,130,.1) 93%,rgba(255,130,130,.7) 96%),linear-gradient(183deg,rgba(130,255,173,0),rgba(255,107,152,.3) 7.9%,rgba(255,130,130,0) 15%);
-    padding: .6em 13.7px;
+    background: linear-gradient(
+        104deg,
+        rgba(255, 130, 130, 0) 0.9%,
+        #ff8282 2.4%,
+        rgba(255, 130, 130, 0.5) 5.8%,
+        rgba(255, 130, 130, 0.1) 93%,
+        rgba(255, 130, 130, 0.7) 96%
+      ),
+      linear-gradient(
+        183deg,
+        rgba(130, 255, 173, 0),
+        rgba(255, 107, 152, 0.3) 7.9%,
+        rgba(255, 130, 130, 0) 15%
+      );
+    padding: 0.6em 13.7px;
     -webkit-box-decoration-break: clone;
     margin: 0;
+    animation: floatin 0.5s ease-in-out;
     border-radius: 7.5px;
-    text-shadow: -12px 12px 9.8px rgba(255,130,130,.7),21px -18.1px 7.3px #fff,-18.1px -27.3px 30px #fff;
+    /* transform: translateY(-100%); */
+    text-shadow: -12px 12px 9.8px rgba(255, 130, 130, 0.7),
+      21px -18.1px 7.3px #fff, -18.1px -27.3px 30px #fff;
+  }
+
+  .floatinAnimation {
+    @apply translate-y-0 transition-transform;
+    animation: floatin 0.5s ease-in-out;
+  }
+
+  @keyframes floatin {
+    from {
+      opacity: 0.5;
+      transform: translateX(-50%);
+    }
+    to {
+      opacity: 1;
+
+      transform: translateX(0%);
+    }
+  }
+  .cursor {
+    visibility: hidden;
+  }
+  .cursor-hover {
+    animation: zoomout 0.5s ease-in-out;
+    visibility: visible;
+
+    
+    @apply cursor-none;
+  }
+  .bg-light-gray-des{
+      --tw-bg-opacity: 0.2;
+      background-color: rgb(25 25 25 / var(--tw-bg-opacity));
+  
+  }
+  .zoominAnimationOnHover:hover {
+    @apply transition-transform scale-110 duration-[3000ms] ease-in-out;
+  }
+  .zoominAnimationOnHover:not(hover) {
+    @apply transition-transform scale-100 duration-[1000ms] ease-in-out;
+  }
+  .floatinAnimationUp {
+    @apply translate-y-0 transition-transform;
+    animation: floatinUp 1s ease-in-out;
+  }
+  @keyframes floatinUp {
+    from {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    to {
+      opacity: 1;
+      
+      transform: translateY(0%);
+    }
+  }
+  .fadeinAnimation {
+    animation: fadein 1s ease-in-out;
+  }
+  .floatinAnimation-2{
+    animation:2s floatinUp 1s ease-in-out;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .fadeoutAnimation {
+    animation: fadeout 1s ease-in-out;
+  }
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes zoomout {
+    0% {
+      transform: translate(0%,0%);
+      transform: scale(0);
+    }
+
+    100% {
+      transform: translate(-50%,-50%);
+
+      transform: scale(1);
+    }
   }
 }

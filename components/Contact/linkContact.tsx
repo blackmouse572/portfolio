@@ -25,7 +25,7 @@ function LinkContact({ icon, href, className, name, size, color, direction }: Pr
   };
   return (
     <AnimatePresence>
-      <Link href={href}>
+      <Link href={href} passHref>
         <motion.div
           variants={linkContactVariants}
           initial="hidden"

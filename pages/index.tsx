@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             <div className="lg:px-0">
               <h3 className="floatinAnimation top-0 font-sans text-4xl lg:text-6xl uppercase  font-black  tracking-tight">
                 HOME PAGE
-                <span className="opacity-10 text-black pl-4">//</span>
+                <span className="opacity-10 text-black pl-4">&#47;&#47;</span>
               </h3>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                   }
                 />
                 <h3 className="text-overlay opacity-0 group-hover:opacity-100 group-hover:-translate-y-5">
-                  <span className="opacity-50 font-bold mx-5 text-xl text-white/60">//</span>
+                  <span className="opacity-50 font-bold mx-5 text-xl text-white/60">&#47;&#47;</span>
                   Image by Rémi Thorel
                 </h3>
               </div>

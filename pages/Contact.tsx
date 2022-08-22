@@ -14,7 +14,7 @@ function Contact() {
             <div className="h-full pb-6 px-4 lg:px-0">
               <h3 className="floatinAnimation top-0 font-sans text-4xl lg:text-6xl uppercase  font-black  tracking-tight">
                 Contact
-                <span className="opacity-10 text-black pl-4">//</span>
+                <span className="opacity-10 text-black pl-4">&#47;&#47;</span>
               </h3>
             </div>
           </div>

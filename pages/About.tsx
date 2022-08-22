@@ -38,7 +38,7 @@ function About() {
             <div className="h-full pb-6 px-4 lg:px-0">
               <h3 className="floatinAnimation top-0 font-sans text-4xl lg:text-6xl uppercase  font-black  tracking-tight">
                 ABOUT
-                <span className="opacity-10 text-black pl-4">//</span>
+                <span className="opacity-10 text-black pl-4">&#47;&#47;</span>
               </h3>
             </div>
           </div>
@@ -56,13 +56,13 @@ function About() {
               </p>
               <p>
                 {" "}
-                I'm a full-stack developer. Since I like want to learn new things, I'm always looking for new
-                opportunities to learn and grow. My passion is to create beautiful and intuitive App and Website.
+                I&rsquo;m a full-stack developer. Since I like want to learn new things, I&rsquo;m always looking for
+                new opportunities to learn and grow. My passion is to create beautiful and intuitive App and Website.
               </p>
               <p>
-                I see my self as a <span className="hightlight">adventure developer</span>. Everyday I'm looking for new
-                challenges. And because of that, I have experience with some different languages, frameworks and aspect.
-                Such as:
+                I see my self as a <span className="hightlight">adventure developer</span>. Everyday I&rsquo;m looking
+                for new challenges. And because of that, I have experience with some different languages, frameworks and
+                aspect. Such as:
               </p>
               <ul className="ml-2">
                 <li>💎 Mobile: Flutter,...</li>
@@ -84,7 +84,7 @@ function About() {
               />
               <form onSubmit={onSubmit} className="flex justify-center items-center space-x-4">
                 <h4>Give me a feedback, will ya?</h4>
-                <input className="px-3" type="text" placeholder="It's great 👌😘" />
+                <input className="px-3" type="text" placeholder="It&rsquo;s great 👌😘" />
                 <motion.button
                   whileInView={{
                     scale: [1.3, 1, 1.3],
@@ -124,8 +124,8 @@ function About() {
                 Achivement 🏅 <span className="opacity-60 text-black -ml-4 ">,</span>
               </h3>
               <p>
-                ❇️ I'm want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to build
-                blazing fast applications. A lot of big company like{" "}
+                ❇️ I&rsquo;m want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to
+                build blazing fast applications. A lot of big company like{" "}
                 <strong>
                   Google <FontAwesomeIcon icon={faGoogle} />
                 </strong>{" "}
@@ -152,8 +152,8 @@ function About() {
                 In the future ⏳ <span className="opacity-60 text-black -ml-4 ">,</span>
               </h3>
               <p>
-                ❇️ I'm want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to build
-                blazing fast applications. A lot of big company like{" "}
+                ❇️ I&rsquo;m want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to
+                build blazing fast applications. A lot of big company like{" "}
                 <strong>
                   Google <FontAwesomeIcon icon={faGoogle} />
                 </strong>{" "}

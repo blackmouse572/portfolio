@@ -2,7 +2,6 @@ import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import Spotify from "react-spotify-embed";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar/Navbar";
 function About() {
@@ -77,11 +76,15 @@ function About() {
                 Beside coding life, I also like to read, watch and listen music. Here, take a break and listen to the
                 playlist I usually listen when coding.
               </p>
-              <Spotify
-                className="mx-auto"
-                wide
-                link="https://open.spotify.com/playlist/37i9dQZF1DX35zmlYTBMjk?si=397803721eb44b33"
-              />
+              <div className="flex justify-between items-center w-full">
+                <iframe
+                  className="rounded-lg shadow-lg self-center"
+                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DX35zmlYTBMjk?utm_source=generator"
+                  width="50%"
+                  height="380"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+              </div>
               <form onSubmit={onSubmit} className="flex justify-center items-center space-x-4">
                 <h4>Give me a feedback, will ya?</h4>
                 <input className="px-3" type="text" placeholder="It&rsquo;s great 👌😘" />

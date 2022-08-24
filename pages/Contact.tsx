@@ -47,7 +47,7 @@ function Contact() {
               direction={"left"}
             />
             <LinkContact
-              href="https://github.com/blackmouse572"
+              href="https://www.instagram.com/black_mouse572/"
               className="w-full space-x-4 h-32"
               icon={faInstagram}
               name={"black_mouse572"}
@@ -56,7 +56,7 @@ function Contact() {
               direction={"right"}
             />
             <LinkContact
-              href="https://github.com/blackmouse572"
+              href="mailto:ngocnt.job@gmail.com"
               className="w-full space-x-4 h-32 col-span-2"
               icon={faEnvelopeOpenText}
               name={"ngocnt.job@gmail.com"}

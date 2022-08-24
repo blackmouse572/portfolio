@@ -52,11 +52,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 lg:px-8 w-full z-10  transition-colors ease-in-out duration-800  ${
-        isScroll ? "bg-light-gray/20 pb-5" : "bg-light-gray/0"
+      className={`fixed  top-0 lg:px-8 w-full z-10  transition-colors ease-in-out duration-800  ${
+        isScroll ? "pb-3 bg-white/20" : "bg-white/20"
       }`}>
       <NavbarPopUp popUp={popUp} setPopUp={setPopUp} menuItems={menuItems} route={router} />
-      <div className=" px-5 pt-5 flex h-full border-b border-white items-center justify-between max-w-11xl mx-auto border-opacity-0">
+      <div className=" px-5 pt-2 flex h-full border-b border-white items-center justify-between max-w-11xl mx-auto border-opacity-0">
         <div className="w-14 sm:w-20">
           <Image layout="responsive" width={800} height={494} src="/icon/long_icon.png" alt="logo"></Image>
         </div>

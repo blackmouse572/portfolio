@@ -1,33 +1,10 @@
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import Content from "../components/About/Content";
 import Footer from "../components/Footer";
+import ImageHover from "../components/ImageHover";
 import Navbar from "../components/Navbar/Navbar";
+import { fadeinAnimation } from "../constrants/fadeinAnimate";
 function About() {
-  function onSubmit(e: any) {
-    e.preventDefault();
-    setOpen(true);
-    //After 3s, close the popup
-    setTimeout(() => {
-      setOpen(false);
-    }, 3000);
-  }
-  const [isOpen, setOpen] = useState(false);
-  const fadeinAnimation = {
-    hidden: {
-      opacity: 0,
-      x: -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  };
   return (
     <div>
       <Navbar />
@@ -41,15 +18,9 @@ function About() {
               </h3>
             </div>
           </div>
-          <section className=" my-12 ">
-            <motion.section
-              variants={fadeinAnimation}
-              initial={"hidden"}
-              whileInView={"visible"}
-              className="px-4 font-mono lg:col-span-2 leading-loose space-y-4 pr-5 md:pr-12 fadeinAnimation">
-              <h3 className=" font-black text-2xl lg:text-4xl tracking-widest mb-6">
-                Hello👋 <span className="opacity-60 text-black -ml-4 ">,</span>
-              </h3>
+          {/* About section */}
+          <Content title="Hello👋" className="grid grid-cols-3">
+            <section className="space-y-4 leading-loose col-span-2 ">
               <p className="min-h-max">
                 My name is <strong className="hover:underline hover:decoration-2 ">🧑‍💼 Nguyen Tuan Ngoc.</strong>
               </p>
@@ -72,120 +43,88 @@ function About() {
                 Also, i have some side experience like{" "}
                 <span className="strong font-bold">Figma, Photoshop, Illustrator, After Effect</span>
               </p>
-              <p>
-                Beside coding life, I also like to read, watch and listen music. Here, take a break and listen to the
-                playlist I usually listen when coding.
-              </p>
-              <div className="flex justify-between items-center w-full">
-                <iframe
-                  className="rounded-lg shadow-lg self-center"
-                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DX35zmlYTBMjk?utm_source=generator"
-                  width="50%"
-                  height="380"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </section>
+            <section className="w-full mx-auto relative h-full">
+              <div className="sticky top-0">
+                <ImageHover
+                  alt="avatar"
+                  src={"/avatar_1.jpg"}
+                  describe="This is me at FPT University 🎒"
+                  height={2048}
+                  width={1536}
+                  href=""
+                />
               </div>
-              <form onSubmit={onSubmit} className="flex justify-center items-center space-x-4">
-                <h4>Give me a feedback, will ya?</h4>
-                <input className="px-3" type="text" placeholder="It&rsquo;s great 👌😘" />
-                <motion.button
-                  whileInView={{
-                    scale: [1.3, 1, 1.3],
-                    transition: {
-                      duration: 1,
-                      ease: "easeInOut",
-                      bounceStiffness: 1,
-                      bounceDamping: 0.5,
-                      repeat: Infinity,
-                    },
-                  }}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
-                </motion.button>
-              </form>
-            </motion.section>
-
-            {/* Achivement section */}
-            <hr className="my-6 bg-black border-black border-3" />
-            <motion.section
-              variants={fadeinAnimation}
-              initial={"hidden"}
-              whileInView={"visible"}
-              className="px-4 font-mono lg:col-span-2 leading-loose space-y-4 pr-5 md:pr-12 mt-24">
-              <h3 className="mt-8 font-black text-2xl lg:text-4xl tracking-widest mb-6">
-                Achivement 🏅 <span className="opacity-60 text-black -ml-4 ">,</span>
-              </h3>
-              <p>
-                ❇️ I&rsquo;m want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to
-                build blazing fast applications. A lot of big company like{" "}
-                <strong>
-                  Google <FontAwesomeIcon icon={faGoogle} />
-                </strong>{" "}
-                and{" "}
-                <strong>
-                  Facebook <FontAwesomeIcon icon={faFacebook} />
-                </strong>{" "}
-                use Rust to build their products.
-              </p>
-              <p>
-                ❇️ Improve softskill like <strong>Project Manager, Team leading, Task Manager</strong> in order to run a
-                small Tech team with me.
-              </p>
-            </motion.section>
-
-            {/* Future section */}
-            <hr className="my-6 bg-black border-black border-3" />
-            <motion.section
-              variants={fadeinAnimation}
-              initial={"hidden"}
-              whileInView={"visible"}
-              className="px-4 font-mono lg:col-span-2 leading-loose space-y-4 pr-5 md:pr-12 mt-24">
-              <h3 className="mt-8 font-black text-2xl lg:text-4xl tracking-widest mb-6">
-                In the future ⏳ <span className="opacity-60 text-black -ml-4 ">,</span>
-              </h3>
-              <p>
-                ❇️ I&rsquo;m want to learn <strong>Rust</strong> ❤️‍🔥. This is a fast growing language that is used to
-                build blazing fast applications. A lot of big company like{" "}
-                <strong>
-                  Google <FontAwesomeIcon icon={faGoogle} />
-                </strong>{" "}
-                and{" "}
-                <strong>
-                  Facebook <FontAwesomeIcon icon={faFacebook} />
-                </strong>{" "}
-                use Rust to build their products.
-              </p>
-              <p>
-                ❇️ Improve softskill like <strong>Project Manager, Team leading, Task Manager</strong> in order to run a
-                small Tech team with me.
-              </p>
-            </motion.section>
-          </section>
+            </section>
+          </Content>
+          <hr className="border-b border-gray-200" />
+          {/* End about section */}
+          {/* Achivement section */}
+          <AnimatePresence mode="wait">
+            <Content title="Achivement 🏅" className="space-y-12">
+              <div className="grid grid-cols-3">
+                <ImageHover
+                  alt="SolFest"
+                  src={"/Events/SolFest.jpg"}
+                  describe="SolFest 🔥🔥"
+                  height={1577}
+                  width={2738}
+                  href=""
+                />
+                <section className="space-y-4 leading-loose col-span-2">
+                  <motion.h5
+                    variants={fadeinAnimation.left}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="text-xl bg-black/60 text-white w-fit px-4">
+                    <span className="opacity-30 text-white pl-4 ">&#47;&#47;</span> SolFest (07-11-2020 ➡️ 08-11-2020)
+                  </motion.h5>
+                  <p>
+                    ❇️ Solfest is a solution contest, where you can solve problems in different ways. I was a leader in
+                    the
+                    <span className="hightlight">TimeLỏd</span> and place the 2nd in the contest.
+                  </p>
+                  <p>
+                    ❇️ Through this competition, I have learned a lot about how to lead a team and how to work with
+                    other. And, I was trained to create and present a good pitching.
+                  </p>
+                </section>
+              </div>
+              <hr className="border-1 border-black w-3/4 mx-auto bg-black rounded-full" />
+              <div className="grid grid-cols-3 ">
+                <section className="col-span-2 ">
+                  <motion.h5
+                    variants={fadeinAnimation.left}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="text-xl bg-black/60 text-white w-fit px-4">
+                    <span className="opacity-30 text-white pl-4 ">&#47;&#47;</span> Copywriter (10-11-2020 ➡️
+                    10-12-2020)
+                  </motion.h5>
+                  <p>
+                    ❇️ I&rsquo;m responsible for the IT section, through that, I have discovered a lot about IT section.
+                    From AI to the new technologies,
+                  </p>
+                  <p>
+                    ❇️ Like a charm, I have found some favourite technologies and frameworks that applied to many my
+                    project till now .
+                  </p>
+                </section>
+                <ImageHover
+                  alt="SolFest"
+                  src={"/Events/TechTips.png"}
+                  describe="TechTips 💪💪"
+                  height={924}
+                  width={1640}
+                  href=""
+                />
+              </div>
+            </Content>
+          </AnimatePresence>
         </div>
       </div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.section
-            key={"popup"}
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 100 }}
-            className="fixed bottom-10 mx-auto w-full flex justify-center items-center">
-            <div className="bg-white shadow-lg rounded-lg px-6 py-4 text-black">Thank you for your opinions ❤️</div>
-          </motion.section>
-        )}
-      </AnimatePresence>
 
       <Footer />
     </div>

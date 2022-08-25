@@ -5,6 +5,9 @@ function Footer() {
       <motion.div
         initial={"hidden"}
         whileInView={"visible"}
+        viewport={{
+          once: true,
+        }}
         variants={{
           hidden: {
             opacity: 0,
@@ -23,6 +26,9 @@ function Footer() {
       <motion.p
         initial={"hidden"}
         whileInView={"visible"}
+        viewport={{
+          once: true,
+        }}
         variants={{
           hidden: {
             opacity: 0,

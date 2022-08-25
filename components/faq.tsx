@@ -6,8 +6,9 @@ import { useState } from "react";
 type Props = {
   question: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
-function FAQ({ question, children }: Props) {
+function FAQ({ question, children, style }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   async function handleClick() {
@@ -21,19 +22,6 @@ function FAQ({ question, children }: Props) {
       height: "0px",
     },
     hover: {},
-  };
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    hover: {
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        type: "tween",
-        ease: "easeOut",
-      },
-    },
   };
 
   const arrowVariants = {
@@ -61,8 +49,9 @@ function FAQ({ question, children }: Props) {
 
   return (
     <motion.div
+      style={style}
       onClick={handleClick}
-      className="cursor-pointer mr-48 mt-12  ml-96 pb-2 overflow-clip 
+      className="cursor-pointer md:mr-48 md:ml-96 pb-2 overflow-clip mx-5 
         relative border-b-2"
       animate="visible"
       variants={containerVariants}
@@ -74,11 +63,6 @@ function FAQ({ question, children }: Props) {
           <FontAwesomeIcon icon={faArrowRight} size={"3x"} />
         </motion.div>
       </section>
-      <motion.div
-        layoutId="fill"
-        className="absolute top-0 left-0 bottom-0 right-0 bg-black/30 "
-        variants={itemVariants}
-      />
       <motion.div
         initial={"closed"}
         animate={isOpen ? "open" : "closed"}

@@ -18,7 +18,7 @@ function Contact() {
               </h3>
             </div>
           </div>
-          <section className="my-8 grid grid-cols-2">
+          <section className="my-8 md:grid md:grid-cols-2 grid-cols-1 ">
             <LinkContact
               href="https://github.com/blackmouse572"
               className="w-full space-x-4 h-32"

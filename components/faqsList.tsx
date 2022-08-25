@@ -55,6 +55,7 @@ function FAQsList() {
         <LayoutGroup>
           {FAQs.map((faq, index) => (
             <motion.section
+              key={index}
               variants={fadeinAnimation.bottom}
               initial="hidden"
               whileInView="visible"

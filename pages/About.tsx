@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import Content from "../components/About/Content";
 import Footer from "../components/Footer";
 import ImageHover from "../components/ImageHover";
@@ -10,9 +11,9 @@ function About() {
       <Navbar />
       <div className="lg:px-8 pt-24 lg:pt-36 min-h-screen  md:px-5 relative ">
         <div className="max-w-7xl mx-auto mb-8">
-          <div className="w-full h-full flex items-end px-1 fade-in">
+          <div className="w-full h-full flex items-end px-1 ">
             <div className="h-full pb-6 px-4 lg:px-0">
-              <h3 className="floatinAnimation top-0 font-sans text-4xl lg:text-6xl uppercase  font-black  tracking-tight px-2 ">
+              <h3 className="top-0 font-sans text-4xl lg:text-6xl uppercase  font-black tracking-tight px-2 ">
                 ABOUT
                 <span className="opacity-10 text-black pl-4">&#47;&#47;</span>
               </h3>
@@ -109,7 +110,7 @@ function About() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     className="text-xl bg-black/60 text-white w-fit px-4">
-                    <span className="opacity-30 text-white pl-4 ">&#47;&#47;</span> Copywriter (10-11-2020 ➡️
+                    <span className="opacity-30 text-white pl-4 ">&#47;&#47;</span> Techtips Copywriter (10-11-2020 ➡️
                     10-12-2020)
                   </motion.h5>
                   <motion.p
@@ -139,6 +140,51 @@ function About() {
                   width={1640}
                   href=""
                 />
+              </div>
+
+              <hr className="border-1 border-black w-3/4 mx-auto bg-black rounded-full" />
+
+              <div className="grid grid-cols-3">
+                <ImageHover
+                  alt="SolFest"
+                  src={"/Events/123host.png"}
+                  describe="123host 🌐"
+                  height={1577}
+                  width={2738}
+                  href=""
+                />
+                <section className="space-y-4 leading-loose col-span-2">
+                  <motion.h5
+                    variants={fadeinAnimation.left}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="text-xl bg-black/60 text-white w-fit px-4">
+                    <span className="opacity-30 text-white pl-4 ">&#47;&#47;</span> Copywritter for 123host.vn
+                    (20/11/2021 ➡️ 1/7/2022)
+                  </motion.h5>
+                  <motion.p
+                    variants={fadeinAnimation.left}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="px-3 md:px-0">
+                    ❇️ This is the first job that I have ever had. I&rsquo;m responsible for writing articles about
+                    linux server's services like webmail, SSH keys, nginx, etc.
+                  </motion.p>
+                  <motion.p
+                    variants={fadeinAnimation.left}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="px-3 md:px-0">
+                    ❇️ I have learned a lot about how to write a good article, how to use SEO to make the article, and
+                    how to work with unix system. You can view my section at{" "}
+                    <Link className="hightlight" href={"https://123host.vn/community/user/ngocvlqt1995/tutorial/"}>
+                      <span className="hightlight cursor-pointer hover:underline">123host.vn</span>
+                    </Link>
+                  </motion.p>
+                </section>
               </div>
             </Content>
           </AnimatePresence>

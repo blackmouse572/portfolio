@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             whileInView="visible"
             viewport={{ once: true }}
             className="text-2xl font-extralight font-mono leading-loose px-8 md:pr-52 md:pl-96 mt-32 w-full ">
-            In today&apos;s busy world, your customers are constantly bombareded with different marketing messages,
+            In today &apos; s busy world, your customers are constantly bombareded with different marketing messages,
             which makes it significantly more difficult for customers to focus and make right choice. In order to stand
             out from the noise, your signal should be clear and precise
           </motion.p>
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
             viewport={{ once: true }}
             className="px-8 lg:px-52 font-medium text-5xl md:text-7xl leading-[5rem] md:leading-[6.5rem] tracking-wide">
             It all boils down to understanding your <strong className="font-bold underline">customer</strong> and{" "}
-            <strong className="font-bold underline">target audience</strong>. In most cases, it&apos;s the design and
+            <strong className="font-bold underline">target audience</strong>. In most cases, it &apos; s the design and
             smooth experience that decide <span className="hightlight">the success</span> of your company.
           </motion.h3>
 
@@ -104,7 +104,7 @@ const Home: NextPage = () => {
             viewport={{ once: true }}
             className="text-2xl font-extralight font-mono leading-loose px-8 md:pr-52 md:pl-96 mt-32 w-full ">
             My workflow is focus on understanding the customer and the target audience. The process of making a product
-            always combined with the customer&apos;s needs and goals. I help you to understand the customer and the
+            always combined with the customer &apos; s needs and goals. I help you to understand the customer and the
             target audience and then create a design that is clear and precise.
           </motion.p>
           <motion.p

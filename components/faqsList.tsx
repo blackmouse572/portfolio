@@ -6,9 +6,9 @@ const FAQs = [
   {
     question: "How much cost do you charge 💸?",
     answer: [
-      "1️⃣ It&apos;s depend to be honest. Each project has its own vision, purpose and timeline. The first state is knowing what you really want from the product we going to make.",
-      "2️⃣ After that, we will have a clear scope what we building, what resource and requirement we need to fulfill",
-      "➕ During the project, you can give us the feedback or adding more requirement to the scope which can lead to a additional cost",
+      "It's depend to be honest. Each project has its own vision, purpose and timeline. The first state is knowing what you really want from the product we going to make.",
+      "After that, we will have a clear scope what we building, what resource and requirement we need to fulfill",
+      "During the project, you can give us the feedback or adding more requirement to the scope which can lead to a additional cost",
     ],
   },
   {
@@ -20,8 +20,8 @@ const FAQs = [
   {
     question: "What can I do to help you ?",
     answer: [
-      "What a good question. It&apos;s really helpful if you can do the following things.",
-      "If you have time, we can meet frequently to discuss the project and discuss the project&apos;s scope and requirement.",
+      "What a good question. It's really helpful if you can do the following things.",
+      "If you have time, we can meet frequently to discuss the project and discuss the project's scope and requirement.",
       "If you too busy, we need to clear the need and the requirement of the product first. Then, I can start building without any concerned.",
     ],
   },

@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
+import ImageHover from "../components/ImageHover";
 import Navbar from "../components/Navbar/Navbar";
-
+import { ProjectContent } from "../constrants/project";
 function Project() {
   return (
     <div>
@@ -14,9 +16,65 @@ function Project() {
               </h3>
             </div>
           </div>
+          {/* Project Content */}
+          {_projectContent()}
         </div>
       </div>
     </div>
+  );
+}
+const containerfloatInVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+const floatInVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
+function _projectContent() {
+  return (
+    <motion.div variants={containerfloatInVariants} animate={"visible"} initial={"hidden"}>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-14">
+        {ProjectContent.map((project) => {
+          return (
+            <motion.div key={project.id} variants={floatInVariants}>
+              <ImageHover
+                src={project.image}
+                alt={project.title}
+                describe={project.title}
+                height={815}
+                width={1755}
+                href={project.detailLink}
+                containerWidth="w-full"
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+    </motion.div>
   );
 }
 

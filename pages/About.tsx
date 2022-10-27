@@ -170,7 +170,7 @@ function About() {
                     viewport={{ once: true }}
                     className="px-3 md:px-0">
                     ❇️ This is the first job that I have ever had. I&rsquo;m responsible for writing articles about
-                    linux server's services like webmail, SSH keys, nginx, etc.
+                    linux server&apos;services like webmail, SSH keys, nginx, etc.
                   </motion.p>
                   <motion.p
                     variants={fadeinAnimation.left}

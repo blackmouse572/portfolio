@@ -180,7 +180,7 @@ function About() {
                     className="px-3 md:px-0">
                     ❇️ I have learned a lot about how to write a good article, how to use SEO to make the article, and
                     how to work with unix system. You can view my section at{" "}
-                    <Link className="hightlight" href={"https://123host.vn/community/user/ngocvlqt1995/tutorial/"}>
+                    <Link passHref className="hightlight" href={"https://123host.vn/community/user/ngocvlqt1995/tutorial/"}>
                       <span className="hightlight cursor-pointer hover:underline">123host.vn</span>
                     </Link>
                   </motion.p>

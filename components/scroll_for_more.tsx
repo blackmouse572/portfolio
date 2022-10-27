@@ -39,8 +39,6 @@ function ScrollForMore() {
   }
   useEffect(() => {
     if (isMouseEnter) {
-      console.log("startChildrenAnimation");
-
       cursorAnimation.start({
         scale: [0, 1.5],
         transition: {
@@ -128,7 +126,8 @@ function ScrollForMore() {
       onClick={onClick}
       className="rounded-full bg-black text-white w-40 h-40 flex justify-center items-center flex-col mx-auto space-y-2 cursor-default overflow-clip border-0 relative"
       ref={boxRef}
-      onMouseMove={(e) => handleMouseMove(e)}>
+      onMouseMove={(e) => handleMouseMove(e)}
+    >
       <p className="text-center font-mono z-10">Go top</p>
       <motion.div animate={logoAnimation} className="z-10">
         <FontAwesomeIcon className="z-10" icon={faArrowUp} size={"2x"} />
@@ -138,7 +137,8 @@ function ScrollForMore() {
           "bg-red-primary w-full h-full rounded-full absolute top-10 left-30 -translate-x-1/2 -translate-y-1/2"
         }
         initial={{ x: -mousePosition.centerX * 100, y: -mousePosition.centerY * 100, scale: 0 }}
-        animate={cursorAnimation}></motion.div>
+        animate={cursorAnimation}
+      ></motion.div>
     </motion.div>
   );
 }

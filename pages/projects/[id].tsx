@@ -74,7 +74,8 @@ export default function Project({ project }: { project: ProjectType }) {
                 duration: 0.5,
                 ease: [0.6, 0.05, -0.01, 0.9],
               },
-            }}>
+            }}
+          >
             {/* Go back */}
             <Link href="/Project" passHref>
               <h3 className="font-sans text-xl lg:text-2xl uppercase  font-black tracking-tight px-2 text-white">
@@ -89,17 +90,17 @@ export default function Project({ project }: { project: ProjectType }) {
           <motion.h1 variants={floatInVariants} className="text-5xl font-bold text-center font-mono mb-4 mt-12">
             {project.title}
           </motion.h1>
-          {project.description.map((desc) => {
+          {project.description.map((desc, index) => {
             return (
-              <motion.p variants={floatInVariants} className="text-xl font-mono">
+              <motion.p key={`desc${index}`} variants={floatInVariants} className="text-xl font-mono">
                 {desc}
               </motion.p>
             );
           })}
           <h2 className="mt-5 font-bold text-3xl font-mono">🌿What I learned:</h2>
-          {project.whatILearned.map((learn) => {
+          {project.whatILearned.map((learn, index) => {
             return (
-              <motion.p variants={floatInVariants} className="text-xl font-mono">
+              <motion.p key={`learn${index}`} variants={floatInVariants} className="text-xl font-mono">
                 {learn}
               </motion.p>
             );

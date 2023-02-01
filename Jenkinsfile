@@ -1,4 +1,4 @@
-pipline {
+pipeline {
   environment {
     DOCKER_IMAGE_NAME = 'portfolio_nextjs'
     DOCKER_CREDS = credentials('Dockerhub')

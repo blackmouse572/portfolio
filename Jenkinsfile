@@ -1,7 +1,7 @@
 pipline {
   environment {
     DOCKER_IMAGE_NAME = 'portfolio_nextjs'
-    DOCKER_CREDS = credentials('dockerhub')
+    DOCKER_CREDS = credentials('Dockerhub')
   }
     agent {
       docker {

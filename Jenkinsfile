@@ -10,13 +10,6 @@ pipline {
       }
     } 
     stages {
-      stage('Clone repository'){
-        steps {
-          script {
-            checkout scm
-          }
-        }
-      }
       stage('Build'){
         steps{
           sh 'npm install'

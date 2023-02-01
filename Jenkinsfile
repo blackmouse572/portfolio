@@ -20,7 +20,7 @@ pipeline {
           sh 'npm run lint'
         }
       }
-      step('Build Docker Image'){
+      stage('Build Docker Image'){
         steps{
           script{
             sh 'docker build -t $DOCKER_IMAGE_NAME .'
@@ -28,7 +28,7 @@ pipeline {
         }
       }
 
-      step('Push Docker Image'){
+      stage('Push Docker Image'){
         steps{
           script{
             withCredentials([usernamePassword(credentialsId: DOCKER_CREDS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {

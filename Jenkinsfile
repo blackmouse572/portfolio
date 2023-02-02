@@ -18,7 +18,8 @@ pipeline {
           sh 'npm run lint'
         }
       }
-          stage('Build and Push Docker Image'){
+      stage('Build and Push Docker Image'){
+        agent any
         steps{
           script{
             // This step should not normally be used in your script. Consult the inline help for details.

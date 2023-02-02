@@ -21,7 +21,7 @@ pipeline {
         }
       }
       stage('Build Docker Image'){
-        agent: any
+        agent any
         steps{
           script{
             sh 'docker build -t $DOCKER_IMAGE_NAME .'

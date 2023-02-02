@@ -2,6 +2,7 @@
 
 FROM node:16-alpine AS deps
 LABEL authror="blackmouse572 <ngocnt.job@gmail.com>"
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies

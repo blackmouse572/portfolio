@@ -15,7 +15,7 @@ pipeline {
           echo 'Installing dependencies'
           sh 'npm install'
           echo 'Linitng'
-          sh 'npm lint'
+          sh 'npm run lint'
         }
       }
           stage('Build and Push Docker Image'){

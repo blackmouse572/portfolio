@@ -6,8 +6,7 @@ pipeline {
     agent {
       docker {
         image 'node:lts-alpine'
-        args '-v /var/run/docker.sock:/var/run/docker.sock'
-      }
+        args '-v /var/run/docker.sock:/var/run/docker.sock'           }
     } 
     stages {
       stage('Build'){
@@ -23,7 +22,9 @@ pipeline {
       stage('Build Docker Image'){
         agent any
         steps{
+          script{
             sh 'docker build -t portfolio_nextjs .'
+          }
         }
       }
 

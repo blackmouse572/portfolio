@@ -3,9 +3,14 @@ pipeline {
     DOCKER_IMAGE_NAME = 'portfolio_nextjs'
     DOCKER_CREDS = credentials('Dockerhub')
   }
-    agent any
+    agent none 
     stages {
       stage('Install dependencies'){
+        agent {
+          docker {
+            image 'node:lts-alpine'
+          }
+        }
         steps{
           echo 'Installing dependencies'
           sh 'npm install'
@@ -13,20 +18,13 @@ pipeline {
           sh 'npm lint'
         }
       }
-      stage('Build Docker Image'){
+          stage('Build and Push Docker Image'){
         steps{
           script{
-            def dockerImage = docker.build("blackmouse572/next_portfolio:latest")
-          }
-        }
-      }
-
-      stage('Push Docker Image'){
-        steps{
-          script{
-            withCredentials([usernamePassword(credentialsId: DOCKER_CREDS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-              sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-              sh 'docker push blackmouse572/next_portfolio:latest'
+            // This step should not normally be used in your script. Consult the inline help for details.
+            withDockerRegistry(credentialsId: 'Docker', url: 'https://index.docker.io/v1/') {
+              sh label : '', script : 'docker build -t blackmouse572/next_portfolio:latest .'
+              sh label : '', script : 'docker push blackmouse572/next_portfolio:latest'
             }
           }
         }

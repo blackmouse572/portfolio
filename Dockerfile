@@ -1,7 +1,7 @@
 #Dockerize a Nextjs app
 
 FROM node:16-alpine AS deps
-RUN apk add --no-cache libc6-compact
+LABEL authror="blackmouse572 <ngocnt.job@gmail.com>"
 WORKDIR /app
 
 # Install dependencies

@@ -3,27 +3,20 @@ pipeline {
     DOCKER_IMAGE_NAME = 'portfolio_nextjs'
     DOCKER_CREDS = credentials('Dockerhub')
   }
-    agent {
-      docker {
-        image 'node:lts-alpine'
-        args '-v /var/run/docker.sock:/var/run/docker.sock'           }
-    } 
+    agent any
     stages {
-      stage('Build'){
+      stage('Install dependencies'){
         steps{
+          echo 'Installing dependencies'
           sh 'npm install'
-        }
-      }
-      stage('Lint'){
-        steps{
-          sh 'npm run lint'
+          echo 'Linitng'
+          sh 'npm lint'
         }
       }
       stage('Build Docker Image'){
-        agent any
         steps{
           script{
-            sh 'docker build -t portfolio_nextjs .'
+            def dockerImage = docker.build("blackmouse572/next_portfolio:latest")
           }
         }
       }
@@ -33,7 +26,7 @@ pipeline {
           script{
             withCredentials([usernamePassword(credentialsId: DOCKER_CREDS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
               sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-              sh 'docker push $DOCKER_IMAGE_NAME'
+              sh 'docker push blackmouse572/next_portfolio:latest'
             }
           }
         }

@@ -1,10 +1,10 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import LinkContact from "../../components/Contact/linkContact";
-import { ProjectContent, ProjectType } from "../../constrants/project";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ProjectContent, ProjectType } from '../../app/constraints/project';
+import LinkContact from '../../components/Contact/linkContact';
 export async function getStaticPaths() {
   //Get project id from file
   const projectIds = ProjectContent.map((project) => {
@@ -31,7 +31,7 @@ const containerfloatInVariants = {
       staggerChildren: 0.2,
 
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -45,7 +45,7 @@ const floatInVariants = {
     y: 0,
     transition: {
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -86,7 +86,7 @@ export default function Project({ project }: { project: ProjectType }) {
           </motion.div>
           <Image src={project.image} alt={project.title} layout="responsive" width={200} height={100} />
         </div>
-        <motion.div className="" variants={containerfloatInVariants} animate={"visible"} initial={"hidden"}>
+        <motion.div className="" variants={containerfloatInVariants} animate={'visible'} initial={'hidden'}>
           <motion.h1 variants={floatInVariants} className="text-5xl font-bold text-center font-mono mb-4 mt-12">
             {project.title}
           </motion.h1>
@@ -111,10 +111,10 @@ export default function Project({ project }: { project: ProjectType }) {
             href={project.github}
             className="w-full space-x-4 h-32"
             icon={faGithub}
-            name={"View source"}
-            size={"2x"}
-            color={"darkblue"}
-            direction={"left"}
+            name={'View source'}
+            size={'2x'}
+            color={'darkblue'}
+            direction={'left'}
           />
         )}
         {project.link && (
@@ -122,10 +122,10 @@ export default function Project({ project }: { project: ProjectType }) {
             href={project.link}
             className="w-full space-x-4 h-32"
             icon={faLink}
-            name={"View site"}
-            size={"2x"}
-            color={"darkblue"}
-            direction={"left"}
+            name={'View site'}
+            size={'2x'}
+            color={'darkblue'}
+            direction={'left'}
           />
         )}
       </div>

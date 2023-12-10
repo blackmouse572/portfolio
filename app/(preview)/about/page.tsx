@@ -1,10 +1,9 @@
 'use client';
+import { fadeinAnimation } from '@/constraints/fadeinAnimate';
+import Content from '@components/About/Content';
+import ImageHover from '@components/ImageHover';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import Content from '../../../components/About/Content';
-import Footer from '../../../components/Footer';
-import ImageHover from '../../../components/ImageHover';
-import { fadeinAnimation } from '../../../constrants/fadeinAnimate';
 function About() {
   return (
     <div>
@@ -202,8 +201,6 @@ function About() {
           </AnimatePresence>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

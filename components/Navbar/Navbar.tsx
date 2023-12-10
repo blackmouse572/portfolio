@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
+import { useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { cn } from '../../app/libs/tw';
 import styles from './Navbar.module.css'; // Import css modules
@@ -31,17 +31,15 @@ function Navbar() {
   const [popUp, setPopUp] = useState(false);
   const [isScroll, setScroll] = useState(false);
   const layout = useSelectedLayoutSegment();
-  const layouts = useSelectedLayoutSegments();
-  console.log({
-    layout,
-    layouts,
-  });
+
   function toggle() {
     setActive(!active);
   }
+
   function togglePopUp() {
     setPopUp(popUp ? false : true);
   }
+
   const scrollHandler = () => {
     if (window.scrollY > 100) {
       setScroll(true);
@@ -49,6 +47,7 @@ function Navbar() {
       setScroll(false);
     }
   };
+
   useEffect(() => {
     scrollHandler();
     addEventListener('scroll', scrollHandler);
@@ -64,7 +63,7 @@ function Navbar() {
       <NavbarPopUp popUp={popUp} setPopUp={setPopUp} menuItems={menuItems} />
       <div className=" px-5 pt-2 flex h-full border-b border-white items-center justify-between max-w-11xl mx-auto border-opacity-0">
         <div className="w-14 sm:w-20">
-          <Image layout="responsive" width={800} height={494} src="/icon/long_icon.png" alt="logo"></Image>
+          <Image width={800} height={494} src="/icon/long_icon.png" alt="logo" />
         </div>
         <div className="hidden lg:flex items-center md:order-2">
           <ul className="flex space-x-2">

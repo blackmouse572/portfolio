@@ -1,8 +1,7 @@
 'use client';
+import LinkContact from '@components/Contact/linkContact';
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
-import LinkContact from '../../../components/Contact/linkContact';
-import Footer from '../../../components/Footer';
 
 function Contact() {
   return (
@@ -65,7 +64,6 @@ function Contact() {
             />
           </section>
         </div>
-        <Footer />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
-import { fadeinAnimation } from "../../constrants/fadeinAnimate";
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
+import { fadeinAnimation } from '../../app/constraints/fadeinAnimate';
 
 function Content({ title, children, className }: { title: string; children: ReactNode; className?: string }) {
   return (
@@ -10,11 +10,12 @@ function Content({ title, children, className }: { title: string; children: Reac
       whileInView="visible"
       exit="hidden"
       transition={{
-        when: "beforeChildren",
+        when: 'beforeChildren',
         staggerChildren: 0.3,
         delayChildren: 0.3,
       }}
-      className="font-mono leading-loose">
+      className="font-mono leading-loose"
+    >
       <h3 className="mt-8 font-black text-2xl lg:text-4xl tracking-widest mb-6">
         {title} <span className="opacity-60 text-black -ml-4 ">,</span>
       </h3>

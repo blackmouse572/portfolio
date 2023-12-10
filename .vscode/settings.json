@@ -2,5 +2,11 @@
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "javascript"
+  },
+  "tailwindCSS.colorDecorators": true,
+  "tailwindCSS.validate": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }

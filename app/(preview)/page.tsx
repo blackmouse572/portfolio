@@ -1,14 +1,13 @@
 'use client';
+import { fadeinAnimation } from '@/constraints/fadeinAnimate';
+import Cursor from '@components/Cursor/Cursor';
+import { MouseContext } from '@components/Cursor/cursorContext';
+import ImageHover from '@components/ImageHover';
+import FAQsList from '@components/faqsList';
+import ScrollForMore from '@components/scroll_for_more';
 import { motion } from 'framer-motion';
 import type { NextPage } from 'next';
 import { useContext } from 'react';
-import Cursor from '../../components/Cursor/Cursor';
-import { MouseContext } from '../../components/Cursor/cursorContext';
-import Footer from '../../components/Footer';
-import ImageHover from '../../components/ImageHover';
-import FAQsList from '../../components/faqsList';
-import ScrollForMore from '../../components/scroll_for_more';
-import { fadeinAnimation } from '../../constrants/fadeinAnimate';
 
 const Home: NextPage = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -136,7 +135,6 @@ const Home: NextPage = () => {
           <hr className="mx-auto w-3/4 mb-20" />
           <FAQsList />
           <hr className="h-32  border-0 " />
-          <Footer />
         </section>
       </motion.div>
     </div>

@@ -1,7 +1,7 @@
 'use client';
+import { ProjectContent } from '@/constraints/project';
+import ImageHover from '@components/ImageHover';
 import { motion } from 'framer-motion';
-import ImageHover from '../../../components/ImageHover';
-import { ProjectContent } from '../../../constrants/project';
 function Project() {
   return (
     <div>

@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";
-import ImageHover from "../components/ImageHover";
-import Navbar from "../components/Navbar/Navbar";
-import { ProjectContent } from "../constrants/project";
+'use client';
+import { motion } from 'framer-motion';
+import ImageHover from '../../../components/ImageHover';
+import { ProjectContent } from '../../../constrants/project';
 function Project() {
   return (
     <div>
-      <Navbar />
       <div className="lg:px-8 pt-24 lg:pt-36 min-h-screen  md:px-5 relative">
         <div className="max-w-7xl mx-auto">
           <div className="w-full h-full flex items-end px-1 fade-in">
@@ -35,7 +34,7 @@ const containerfloatInVariants = {
       staggerChildren: 0.2,
 
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -49,14 +48,14 @@ const floatInVariants = {
     y: 0,
     transition: {
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
 
 function _projectContent() {
   return (
-    <motion.div variants={containerfloatInVariants} animate={"visible"} initial={"hidden"}>
+    <motion.div variants={containerfloatInVariants} animate={'visible'} initial={'hidden'}>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-14">
         {ProjectContent.map((project) => {
           return (

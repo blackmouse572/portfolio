@@ -1,3 +1,4 @@
+import MouseContextProvider from '@components/Cursor/cursorContext';
 import '@styles/globals.css';
 import { Metadata } from 'next';
 import { IBM_Plex_Sans, Oswald, Ubuntu_Mono } from 'next/font/google';
@@ -57,7 +58,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <html lang="en" className={cn(ubuntu.variable, ibm.variable, oswald.variable)}>
-      <body className="antialiased scroll-smooth bg-white-bg text-black">{children}</body>
+      <MouseContextProvider>
+        <body className="antialiased scroll-smooth bg-white-bg text-black">{children}</body>
+      </MouseContextProvider>
     </html>
   );
 }

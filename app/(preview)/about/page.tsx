@@ -4,6 +4,7 @@ import Content from '@components/About/Content';
 import ImageHover from '@components/ImageHover';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+
 function About() {
   return (
     <div>

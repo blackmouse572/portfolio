@@ -1,14 +1,14 @@
-import React, { createContext, useState } from "react";
+'use client';
+import React, { createContext, useState } from 'react';
 export const MouseContext = createContext({
-  cursorType: "",
-  cursorChangeHandler: (_cursorType:any) => {},
+  cursorType: '',
+  cursorChangeHandler: (_cursorType: any) => {},
 });
-const MouseContextProvider = (props:any) => {
-  const [cursorType, setCursorType] = useState("cursor");
-  const cursorChangeHandler = (cursorType:any) => {
+const MouseContextProvider = (props: any) => {
+  const [cursorType, setCursorType] = useState('cursor');
+  const cursorChangeHandler = (cursorType: any) => {
     setCursorType(cursorType);
     return;
-    
   };
   return (
     <MouseContext.Provider

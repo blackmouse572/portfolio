@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     'Nodejs',
     'Node',
   ],
+  icons: {
+    icon: '/icon/icon.ico',
+  },
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {

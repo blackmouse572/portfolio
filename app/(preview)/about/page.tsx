@@ -34,12 +34,27 @@ function About() {
                 aspect. Such as:
               </p>
               <ul className="ml-2">
-                <li>💎 Mobile: Flutter,...</li>
-                <li>💎 Web: Reactjs, Nextjs, SASS, Tailwindcss, Bulma, ChakraUI, ...etc</li>
-                <li>💎 Database: MySQL, MongoDB, Firebase,...</li>
+                <li>
+                  💎 <strong>Mobile:</strong> Flutter, React Native
+                </li>
+                <li>
+                  💎 <strong>Web:</strong> Reactjs, Nextjs, Emberjs, Vue
+                </li>
+                <li>
+                  💎 <strong>Backend:</strong> ASP.NET, Nodejs, Rust, Golang
+                </li>
+                <li>
+                  💎 <strong>Database:</strong> MySQL, MongoDB, Firebase, Postgres
+                </li>
+                <li>
+                  💎 <strong>Cloud related:</strong> AWS, CICD, Docker, K8s
+                </li>
+                <li>
+                  💎 <strong>Others:</strong> Project Manager, Jira, Trello, Srumb, Agile
+                </li>
               </ul>
               <p>
-                Also, i have some side experience like{' '}
+                Also, i have some side experience like&nbsp;
                 <span className="strong font-bold">Figma, Photoshop, Illustrator, After Effect</span>
               </p>
             </section>

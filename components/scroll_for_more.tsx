@@ -1,11 +1,11 @@
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion, useAnimationControls } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 function ScrollForMore() {
   function convertToRelative(value: number) {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       return value - window.scrollY;
     }
   }
@@ -31,9 +31,9 @@ function ScrollForMore() {
       transition: {
         repeat: Infinity,
         duration: 1,
-        ease: "easeInOut",
+        ease: 'easeInOut',
         delay: 0.5,
-        repeatType: "loop",
+        repeatType: 'loop',
       },
     });
   }
@@ -43,7 +43,7 @@ function ScrollForMore() {
         scale: [0, 1.5],
         transition: {
           duration: 1,
-          ease: "easeIn",
+          ease: 'easeIn',
         },
       });
     } else {
@@ -51,19 +51,18 @@ function ScrollForMore() {
         scale: [1.5, 0],
         transition: {
           duration: 1,
-          ease: "easeOut",
+          ease: 'easeOut',
         },
       });
     }
-  }, [isMouseEnter]);
+  }, [cursorAnimation, isMouseEnter]);
   useEffect(() => {
     cursorAnimation.start({
       top: (convertToRelative(mousePosition.y) ?? 1) - mousePosition.height / 2,
       left: mousePosition.x - mousePosition.width / 2,
     });
-  }, [mousePosition]);
+  }, [cursorAnimation, mousePosition]);
   function stopChildrenAnimation() {
-    console.log("stopChildrenAnimation");
     logoAnimation.stop();
     cursorAnimation.stop();
     setMouseEnter(false);
@@ -112,14 +111,12 @@ function ScrollForMore() {
       animate={{ opacity: 1, y: 0 }}
       transition={{
         delay: 1,
-
-        type: "spring",
+        type: 'spring',
         stiffness: 100,
         damping: 20,
-
         staggerChildren: 0.3,
         delayChildren: 0.5,
-        when: "beforeChildren",
+        when: 'beforeChildren',
       }}
       onMouseEnter={startChildrenAnimation}
       onMouseLeave={stopChildrenAnimation}
@@ -130,11 +127,15 @@ function ScrollForMore() {
     >
       <p className="text-center font-mono z-10">Go top</p>
       <motion.div animate={logoAnimation} className="z-10">
-        <FontAwesomeIcon className="z-10" icon={faArrowUp} size={"2x"} />
+        <FontAwesomeIcon className="z-10" icon={faArrowUp} size={'2x'} />
       </motion.div>
       <motion.div
+        style={{
+          x: mousePosition.x,
+          y: mousePosition.y,
+        }}
         className={
-          "bg-red-primary w-full h-full rounded-full absolute top-10 left-30 -translate-x-1/2 -translate-y-1/2"
+          'bg-red-primary w-full h-full rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
         }
         initial={{ x: -mousePosition.centerX * 100, y: -mousePosition.centerY * 100, scale: 0 }}
         animate={cursorAnimation}

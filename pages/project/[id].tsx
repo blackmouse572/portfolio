@@ -1,5 +1,3 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -110,21 +108,17 @@ export default function Project({ project }: { project: ProjectType }) {
           <LinkContact
             href={project.github}
             className="w-full space-x-4 h-32"
-            icon={faGithub}
+            icon={'Github'}
             name={'View source'}
-            size={'2x'}
-            color={'darkblue'}
             direction={'left'}
           />
         )}
         {project.link && (
           <LinkContact
             href={project.link}
+            icon="Link"
             className="w-full space-x-4 h-32"
-            icon={faLink}
             name={'View site'}
-            size={'2x'}
-            color={'darkblue'}
             direction={'left'}
           />
         )}

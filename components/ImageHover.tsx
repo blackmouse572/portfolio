@@ -13,7 +13,7 @@ type Props = {
 };
 function ImageHover(props: Props) {
   return (
-    <Link href={props.href} passHref>
+    <Link href={props.href}>
       <div
         className={cn([
           'relative group mx-auto ',

@@ -1,7 +1,9 @@
+import { TooltipProvider } from '@/components/ui/tooltip';
 import MouseContextProvider from '@components/Cursor/cursorContext';
 import '@styles/globals.css';
+import { GeistMono } from 'geist/font/mono';
 import { Metadata } from 'next';
-import { IBM_Plex_Sans, Oswald, Ubuntu_Mono } from 'next/font/google';
+import { IBM_Plex_Sans, Oswald } from 'next/font/google';
 import React from 'react';
 import { cn } from './libs/tw';
 
@@ -21,12 +23,6 @@ const oswald = Oswald({
   subsets: ['latin-ext', 'vietnamese'],
   style: ['normal'],
   variable: '--font-oswald',
-});
-
-const ubuntu = Ubuntu_Mono({
-  weight: ['400', '700'],
-  subsets: ['latin-ext'],
-  variable: '--font-ubuntu',
 });
 
 export const metadata: Metadata = {
@@ -60,9 +56,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <html lang="en" className={cn(ubuntu.variable, ibm.variable, oswald.variable)}>
+    <html lang="en" className={cn(ibm.variable, oswald.variable, GeistMono.variable)}>
       <MouseContextProvider>
-        <body className="antialiased scroll-smooth bg-white-bg text-black">{children}</body>
+        <TooltipProvider>
+          <body className="antialiased scroll-smooth bg-white-bg text-black">{children}</body>
+        </TooltipProvider>
       </MouseContextProvider>
     </html>
   );

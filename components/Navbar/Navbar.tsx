@@ -56,8 +56,8 @@ function Navbar() {
   return (
     <nav
       className={cn([
-        'fixed  top-0 lg:px-8 w-full z-10 transition-colors ease-in-out duration-800 font-sans',
-        isScroll ? 'pb-3 bg-white/20 backdrop-blur-sm' : 'bg-white/20',
+        'fixed top-0 pb-2 lg:px-8 w-full z-10 transition-colors ease-in-out duration-800 font-sans',
+        isScroll ? ' bg-white/20 backdrop-blur-sm' : 'bg-white/20',
       ])}
     >
       <NavbarPopUp popUp={popUp} setPopUp={setPopUp} menuItems={menuItems} />

@@ -23,8 +23,9 @@
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
-      "@types/*": ["types/*"],
-      "@lib/*": ["app/libs/*"]
+      "@types/*": ["app/types/*"],
+      "@lib/*": ["app/libs/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true,
     "plugins": [
@@ -39,7 +40,8 @@
     "**/*.tsx",
     "pages/_document.tsx",
     "components/cursorContext.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }

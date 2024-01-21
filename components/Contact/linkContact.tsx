@@ -1,6 +1,5 @@
 import { cn } from '@/libs/tw';
 import Icons, { IconType } from '@components/icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 type Props = {
@@ -23,6 +22,8 @@ function LinkContact({ icon, href, className, name, direction, iconClassName }: 
       opacity: 1,
     },
   };
+
+  const Icon = Icons[icon];
   return (
     <AnimatePresence>
       <Link href={href} passHref>
@@ -41,7 +42,7 @@ function LinkContact({ icon, href, className, name, direction, iconClassName }: 
             className
           }
         >
-          <FontAwesomeIcon icon={Icons[icon]} className={cn(iconClassName, 'text-3xl')} />
+          <Icon className={cn(iconClassName, 'text-3xl')} />
           <span className="text-3xl">{name}</span>
           <motion.div
             className={

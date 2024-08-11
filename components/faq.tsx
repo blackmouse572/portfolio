@@ -1,7 +1,6 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import Icons from '@components/icons';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 type Props = {
   question: string;
@@ -16,10 +15,10 @@ function FAQ({ question, children, style }: Props) {
   }
   const boxVariants = {
     open: {
-      height: "auto",
+      height: 'auto',
     },
     closed: {
-      height: "0px",
+      height: '0px',
     },
     hover: {},
   };
@@ -41,8 +40,8 @@ function FAQ({ question, children, style }: Props) {
       opacity: 1,
       transition: {
         duration: 0.4,
-        type: "tween",
-        ease: "easeOut",
+        type: 'tween',
+        ease: 'easeOut',
       },
     },
   };
@@ -56,18 +55,21 @@ function FAQ({ question, children, style }: Props) {
       animate="visible"
       variants={containerVariants}
       whileHover="hover"
-      initial="hidden">
+      initial="hidden"
+    >
       <section className="font-sans uppercase flex flex-row justify-between z-20">
         <h4 className="text-4xl max-w-md">{question}</h4>
-        <motion.div animate={isOpen ? "open" : "closed"} initial="closed" variants={arrowVariants} className="h-fit">
-          <FontAwesomeIcon icon={faArrowRight} size={"3x"} />
+        <motion.div animate={isOpen ? 'open' : 'closed'} initial="closed" variants={arrowVariants} className="h-fit">
+          {/* <FontAwesomeIcon icon={faArrowRight} size={"3x"} /> */}
+          <Icons.ArrowRight/>
         </motion.div>
       </section>
       <motion.div
-        initial={"closed"}
-        animate={isOpen ? "open" : "closed"}
+        initial={'closed'}
+        animate={isOpen ? 'open' : 'closed'}
         variants={boxVariants}
-        className="text-xl mt-12 font-mono overflow-clip z-20 space-y-4">
+        className="text-xl mt-12 font-mono overflow-clip z-20 space-y-4"
+      >
         {children}
       </motion.div>
     </motion.div>

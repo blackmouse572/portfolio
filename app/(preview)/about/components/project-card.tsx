@@ -13,7 +13,7 @@ type Props = {
 const containerClassName = clsx(
   'mouse-pointer border-neutral-300 rounded-md px-3 py-5 border hover:bg-white/20 transition-all duration-300 ease-in-out relative'
 );
-function Card({ href, description, tags, title, indicator }: Props) {
+function ProjectCard({ href, description, tags, title, indicator }: Props) {
   const children = (
     <>
       <h1 className="text-base font-bold">{title}</h1>
@@ -28,7 +28,7 @@ function Card({ href, description, tags, title, indicator }: Props) {
       {indicator && (
         <div className="absolute top-3 right-3">
           <div className="relative">
-            <Tooltip>
+            <Tooltip delayDuration={0}>
               <TooltipContent sideOffset={24}>Project is in development</TooltipContent>
               <TooltipTrigger>
                 <div className="absolute w-2 h-2 rounded-full bg-green-400 top-0 right-0"></div>
@@ -49,4 +49,4 @@ function Card({ href, description, tags, title, indicator }: Props) {
   );
 }
 
-export default Card;
+export default ProjectCard;

@@ -1,4 +1,4 @@
-import Card from '@/(preview)/about/components/card';
+import ProjectCard from '@/(preview)/about/components/project-card';
 import Sidebar from '@/(preview)/about/components/sidebar';
 import { Resume } from '@/types/resume';
 import { Button } from '@components/button';
@@ -60,7 +60,6 @@ const resume: Resume = {
       endDate: parse('2022-7-01', 'yyyy-MM-dd', new Date()),
       url: 'https://123host.vn/community/user/ngocvlqt1995/tutorial/',
       highlights: [
-        "This is the first job that I have ever had. I'm responsible for writing articles about linux server'services like webmail, SSH keys, nginx, etc.",
         'I have learned a lot about how to write a good article, how to use SEO to make the article, and how to work with unix system.',
       ],
       summary:
@@ -369,8 +368,8 @@ function About() {
                     return (
                       <li key={profile.username + profile.network}>
                         <Link href={profile.url} target="_blank">
-                          <Button variant={'outline'} size={'icon'}>
-                            <Icon />
+                          <Button variant={'outline'} className="flex items-center gap-2">
+                            <Icon className="size-5" /> <span>{profile.network}</span>
                           </Button>
                         </Link>
                       </li>
@@ -474,7 +473,7 @@ function About() {
             <h3 className="text-2xl font-bold tracking-wide font-sans">Certificates</h3>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 grid-cols-1">
               {resume.certificates.map((certificate) => (
-                <Card
+                <ProjectCard
                   key={certificate.name}
                   href={certificate.url}
                   title={certificate.name}
@@ -490,7 +489,7 @@ function About() {
               {resume.projects.map((project) => {
                 const withIndicator = project.endDate ? isAfter(project.endDate, new Date()) : true;
                 return (
-                  <Card
+                  <ProjectCard
                     key={project.name}
                     href={project.url}
                     title={project.name}

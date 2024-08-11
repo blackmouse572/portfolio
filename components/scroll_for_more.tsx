@@ -1,5 +1,4 @@
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icons from '@components/icons';
 import { motion, useAnimationControls } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
@@ -127,7 +126,7 @@ function ScrollForMore() {
     >
       <p className="text-center font-mono z-10">Go top</p>
       <motion.div animate={logoAnimation} className="z-10">
-        <FontAwesomeIcon className="z-10" icon={faArrowUp} size={'2x'} />
+        <Icons.ArrowTop className="w-8 h-8 z-10" />
       </motion.div>
       <motion.div
         style={{

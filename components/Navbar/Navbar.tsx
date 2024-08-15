@@ -77,7 +77,7 @@ function Navbar() {
                       'bg-opacity-20': layout !== item.href,
                     },
                   ])}
-                  href={item.href ?? '/'}
+                  href={item.href ? `/${item.href}` : '/'}
                 >
                   {item.name}
                 </Link>

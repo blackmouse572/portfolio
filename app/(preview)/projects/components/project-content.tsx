@@ -1,11 +1,10 @@
 'use client';
 
 import ImageHover from '@components/ImageHover';
-import { Project } from 'contentlayer/generated';
 import { motion } from 'framer-motion';
 
 type Props = {
-  projects: Project[];
+  projects: any;
 };
 
 const containerfloatInVariants = {
@@ -43,7 +42,7 @@ function ProjectContent({ projects }: Props) {
   return (
     <motion.div variants={containerfloatInVariants} animate={'visible'} initial={'hidden'}>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-14">
-        {projects.map((project) => {
+        {projects.map(({ metadata: project, slug }) => {
           return (
             <motion.div key={project.slug} variants={floatInVariants}>
               <ImageHover
@@ -52,7 +51,7 @@ function ProjectContent({ projects }: Props) {
                 describe={project.title}
                 height={815}
                 width={1755}
-                href={`projects/${project.slug}`}
+                href={`projects/${slug}`}
                 containerWidth="w-full"
               />
             </motion.div>

@@ -1,4 +1,5 @@
 'use client';
+import { siteConfig } from '@/libs/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
@@ -16,10 +17,6 @@ function Navbar() {
     {
       name: 'About',
       href: 'about',
-    },
-    {
-      name: 'Project',
-      href: 'projects',
     },
     {
       name: 'Contact',
@@ -83,6 +80,17 @@ function Navbar() {
                 </Link>
               </li>
             ))}
+
+            <li key={'blog'}>
+              <Link
+                className={cn([
+                  'transition-all text-black opacity-80 relative h-7 tracking-wider pt-0.5 first::pt-0  uppercase text-2xs font-500 padding-huge bg-white duration-200 items-center px-4 hover:bg-opacity-70 rounded  flex justify-center flex-row',
+                ])}
+                href={siteConfig.links.blog}
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="lg:hidden z-20">

@@ -1,12 +1,16 @@
 'use client';
 
+import { Metadata } from '@/libs/mdx';
 import ImageHover from '@components/ImageHover';
 import { motion } from 'framer-motion';
 
 type Props = {
-  projects: any;
+  projects: {
+    metadata: Metadata;
+    slug: string;
+    content: string;
+  }[];
 };
-
 const containerfloatInVariants = {
   hidden: {
     opacity: 0,
@@ -42,11 +46,11 @@ function ProjectContent({ projects }: Props) {
   return (
     <motion.div variants={containerfloatInVariants} animate={'visible'} initial={'hidden'}>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-14">
-        {projects.map(({ metadata: project, slug }) => {
+        {projects.map(({ metadata: project }, slug) => {
           return (
-            <motion.div key={project.slug} variants={floatInVariants}>
+            <motion.div key={slug} variants={floatInVariants}>
               <ImageHover
-                src={project.thumbnail}
+                src={project.thumbnail || '/icon/long_icon.png'}
                 alt={project.title}
                 describe={project.title}
                 height={815}
